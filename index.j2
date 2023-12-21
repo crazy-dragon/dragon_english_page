@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>homepage</title>
+    <style>
+        .catalog {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        #logo {
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        #logo p {
+            font-size: 50px;
+            text-align: center;
+            font-weight: bold;
+        }
+		
+		h2 {
+			text-align: center;
+		}
+		
+		ul {
+			list-style: none;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
+
+        .primary {
+            width: 300px;
+            float: left;
+            padding: 20px 0;
+        }
+
+        .middle {
+            width: 300px;
+            float: left;
+            padding: 20px 0;
+        }
+
+        .advanced {
+            width: 300px;
+            float: left;
+            padding: 20px 0;
+        }
+
+        a {
+
+            text-decoration: none;
+            /* 去除默认的下划线 */
+            color: #000000;
+            text-decoration: none;
+            font-size: 15px;
+			font-weight: bold;
+        }
+
+        a:hover {
+            color: red;
+        }
+    </style>
+    <link rel="shortcut icon" href="./static/favicon.ico">
+</head>
+
+<body style="background-image: linear-gradient(160deg, #b100ff 20%,#00b3ff 40%);">
+    <div class="catalog">
+        <div id="logo">
+            <p>DragonEnglish</p>
+        </div>
+        <div class="primary">
+            <h2>Low Level</h2>
+            <ul>
+            {% for level in context["low_levels"] %}
+                <li>
+                    <a href="{{ level["path"] }}">{{ level["name"] }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="middle">
+            <h2>Middle Level</h2>
+            <ul>
+            {% for level in context["middle_levels"] %}
+                <li>
+                    <a href="{{ level["path"] }}">{{ level["name"] }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="advanced">
+            <h2>High Level</h2>
+            <ul>
+            {% for level in context["high_levels"] %}
+                <li>
+                    <a href="{{ level["path"] }}">{{ level["name"] }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

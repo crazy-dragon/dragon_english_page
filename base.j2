@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fighting!</title>
+    <link rel="shortcut icon" href="../../../static/favicon.ico">
+    <link rel="stylesheet" href="../../../static/dragon_english.css" type="text/css"/>
+    <script type="text/javascript" src="../../../static/dragon_english.js"></script>
+</head>
+
+<body>
+    <div id="homepage">
+        <a href="../../../index.html">返回</a>
+    </div>
+    <div class="content">
+        {% for word_obj in word_objs %}
+        <div class="word_obj">
+            <p class="word">
+                <a href="goldendict://{{ word_obj["word"] }}" title="goldendict query"><span>{{ word_obj["order"] }}.</span></a>{{ word_obj["word"] }} {{ word_obj["phonetic"] }}
+                <a href="javascript:void(0)" title="Fart" onclick="singer('../../../audio/{{ word_obj["word"] }}.mp3')">
+                    <span class="sound_voice"></span>
+                </a>
+            </p>
+            <p class="trans">{{ word_obj["explain"]|safe }}</p>
+            <ul class="sentences">
+                <li>
+                    <p class="original">{{ word_obj["sentence"] }}</p>
+                    <p class="translate">{{ word_obj["trans"] }}</p>
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+.sound_voice {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url("../voice.png") no-repeat center;
+	background-size: contain;
+}
+
+.word_obj {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#homepage {
+	position: fixed;
+	bottom: 100px;
+	right: 100px;
+	border-radius: 25px;
+	text-align: center;
+	width: 100px;
+	background-color: RGB(150, 185, 125);
+}
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+a:hover {
+	color: red;
+}
